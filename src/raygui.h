@@ -4231,7 +4231,7 @@ int GuiTextInputBox(Rectangle bounds, const char *title, const char *message, co
 // Grid control
 // NOTE: Returns grid mouse-hover selected cell
 // About drawing lines at subpixel spacing, simple put, not easy solution:
-// Ref: https://stackoverflow.com/questions/4435450/2d-opengl-drawing-lines-that-dont-exactly-fit-pixel-raster
+// REF: https://stackoverflow.com/questions/4435450/2d-opengl-drawing-lines-that-dont-exactly-fit-pixel-raster
 int GuiGrid(Rectangle bounds, const char *text, float spacing, int subdivs, Vector2 *mouseCell)
 {
     // Grid lines alpha amount
@@ -5076,12 +5076,12 @@ static const char **GetTextLines(const char *text, int *count)
     static const char *lines[RAYGUI_MAX_TEXT_LINES] = { 0 };
     for (int i = 0; i < RAYGUI_MAX_TEXT_LINES; i++) lines[i] = NULL;    // Init NULL pointers to substrings
 
-    int textSize = (int)strlen(text);
+    int textLength = (int)strlen(text);
 
     lines[0] = text;
     *count = 1;
 
-    for (int i = 0, k = 0; (i < textSize) && (*count < RAYGUI_MAX_TEXT_LINES); i++)
+    for (int i = 0, k = 0; (i < textLength) && (*count < RAYGUI_MAX_TEXT_LINES); i++)
     {
         if (text[i] == '\n')
         {
